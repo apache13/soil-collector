@@ -1,0 +1,25 @@
+<tr>
+    <td>
+    
+        <%= customer.name %>
+    
+    </td>
+    <td>
+    
+        <%= customer.tel %>
+    
+    </td>
+    <td>
+    
+        <%= customer.address %>
+    
+    </td>
+    <td>
+    
+        <%= customer.remark %>
+    
+    </td>
+        <td><%= link_to 'Show', customer, class: "btn btn-light btn-sm" %></td>
+        <td><%= link_to 'Edit', edit_customer_path(customer), class: "btn btn-warning btn-sm" %></td>
+        <td><%= link_to 'Destroy', customer, data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: "btn btn-danger btn-sm" %></td>
+</tr>

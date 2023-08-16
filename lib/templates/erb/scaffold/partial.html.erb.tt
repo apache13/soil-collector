@@ -1,0 +1,17 @@
+<tr>
+<% attributes.reject(&:password_digest?).each do |attribute| -%>
+    <td>
+    <% if attribute.attachment? -%>
+        <%%= link_to <%= singular_name %>.<%= attribute.column_name %>.filename, <%= singular_name %>.<%= attribute.column_name %> if <%= singular_name %>.<%= attribute.column_name %>.attached? %>
+    <% elsif attribute.attachments? -%>
+        <%% <%= singular_name %>.<%= attribute.column_name %>.each do |<%= attribute.singular_name %>| %>
+          <div><%%= link_to <%= attribute.singular_name %>.filename, <%= attribute.singular_name %> %></div>
+    <% else %>
+        <%%= <%= singular_table_name %>.<%= attribute.column_name %> %>
+    <% end %>
+    </td>
+<% end -%>
+        <td><%%= link_to 'Show', <%= model_resource_name %>, class: "btn btn-light btn-sm" %></td>
+        <td><%%= link_to 'Edit', edit_<%= singular_route_name %>_path(<%= singular_table_name %>), class: "btn btn-warning btn-sm" %></td>
+        <td><%%= link_to 'Destroy', <%= model_resource_name %>, data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: "btn btn-danger btn-sm" %></td>
+</tr>
