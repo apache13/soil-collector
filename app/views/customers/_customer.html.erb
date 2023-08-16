@@ -19,7 +19,7 @@
         <%= customer.remark %>
     
     </td>
-        <td><%= link_to 'Show', customer, class: "btn btn-light btn-sm" %></td>
+        <td><%= link_to 'Show', customer, class: "btn btn-success btn-sm" %></td>
         <td><%= link_to 'Edit', edit_customer_path(customer), class: "btn btn-warning btn-sm" %></td>
-        <td><%= link_to 'Destroy', customer, data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: "btn btn-danger btn-sm" %></td>
+        <td><%= button_to 'Destroy', customer, method: :delete, form: {data: {turbo_confirm: 'Are you sure?'}}, class: "btn btn-danger btn-sm" %></td>
 </tr>
