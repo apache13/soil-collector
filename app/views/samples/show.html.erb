@@ -1,0 +1,42 @@
+<p>
+  <strong>Code:</strong>
+  <%= @sample.code %>
+</p>
+<p>
+  <strong>Detail:</strong>
+  <%= @sample.detail %>
+</p>
+<p>
+  <strong>Location:</strong>
+  <%= @sample.location %>
+</p>
+<p>
+  <strong>Plant:</strong>
+  <%= @sample.plant %>
+</p>
+<p>
+  <strong>Ph weight:</strong>
+  <%= @sample.ph_Weight %>
+</p>
+<p>
+  <strong>Ph or:</strong>
+  <%= @sample.ph_OR %>
+</p>
+<p>
+  <strong>Ph 1:</strong>
+  <%= @sample.ph_1 %>
+</p>
+<p>
+  <strong>Ph 2:</strong>
+  <%= @sample.ph_2 %>
+</p>
+<p>
+  <strong>Ph 3:</strong>
+  <%= @sample.ph_3 %>
+</p>
+
+<br>
+
+<%= link_to 'Edit', edit_sample_path(@sample) , class: "btn btn-warning btn-sm" %>
+<%= link_to 'Back', samples_path , class: "btn btn-light btn-sm" %>
+<%= button_to "Destroy", @post, method: :delete , class: "btn btn-danger btn-sm" %>

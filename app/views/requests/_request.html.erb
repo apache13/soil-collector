@@ -1,0 +1,49 @@
+<tr>
+    <td>    
+    
+        <%= request.receive %>
+    
+    </td>
+    <td>    
+    
+        <%= request.ph %>
+    
+    </td>
+    <td>    
+    
+        <%= request.lime %>
+    
+    </td>
+    <td>    
+    
+        <%= request.om %>
+    
+    </td>
+    <td>    
+    
+        <%= request.p %>
+    
+    </td>
+    <td>    
+    
+        <%= request.k %>
+    
+    </td>
+    <td>    
+    
+        <%= request.channel %>
+    
+    </td>
+    <td>    
+    
+        <%= request.remark %>
+    
+    </td>
+    <td>
+        <div class="row align-items-center">
+            <div class="col-2"><%= link_to 'Show', request, class: "btn btn-success btn-sm" %></div>
+            <div class="col-2"><%= link_to 'Edit', edit_request_path(request), class: "btn btn-warning btn-sm" %></div>
+            <div class="col-2"><%= button_to 'Destroy', request, method: :delete, form: {data: {turbo_confirm: 'Are you sure?'}}, class: "btn btn-danger btn-sm" %></div>
+        </div>
+    </td>
+</tr>

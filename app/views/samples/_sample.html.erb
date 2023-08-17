@@ -1,0 +1,54 @@
+<tr>
+    <td>    
+    
+        <%= sample.code %>
+    
+    </td>
+    <td>    
+    
+        <%= sample.detail %>
+    
+    </td>
+    <td>    
+    
+        <%= sample.location %>
+    
+    </td>
+    <td>    
+    
+        <%= sample.plant %>
+    
+    </td>
+    <td>    
+    
+        <%= sample.ph_Weight %>
+    
+    </td>
+    <td>    
+    
+        <%= sample.ph_OR %>
+    
+    </td>
+    <td>    
+    
+        <%= sample.ph_1 %>
+    
+    </td>
+    <td>    
+    
+        <%= sample.ph_2 %>
+    
+    </td>
+    <td>    
+    
+        <%= sample.ph_3 %>
+    
+    </td>
+    <td>
+        <div class="row align-items-center">
+            <div class="col-2"><%= link_to 'Show', sample, class: "btn btn-success btn-sm" %></div>
+            <div class="col-2"><%= link_to 'Edit', edit_sample_path(sample), class: "btn btn-warning btn-sm" %></div>
+            <div class="col-2"><%= button_to 'Destroy', sample, method: :delete, form: {data: {turbo_confirm: 'Are you sure?'}}, class: "btn btn-danger btn-sm" %></div>
+        </div>
+    </td>
+</tr>

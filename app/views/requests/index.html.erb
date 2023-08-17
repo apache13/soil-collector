@@ -1,0 +1,23 @@
+<h1>Requests</h1>
+
+<table class="table table-hover" id="requests">
+  <thead>
+    <tr>
+    <th scope="col">Receive</th>
+    <th scope="col">Ph</th>
+    <th scope="col">Lime</th>
+    <th scope="col">Om</th>
+    <th scope="col">P</th>
+    <th scope="col">K</th>
+    <th scope="col">Channel</th>
+    <th scope="col">Remark</th>
+    <th scope="col" colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render @requests %>
+  </tbody>
+</table>
+
+<%= link_to "New request", new_request_path, class: "btn btn-primary" %>

@@ -1,0 +1,53 @@
+<%= bootstrap_form_with(model: sample, layout: :horizontal) do |form| %>
+  <% if sample.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(sample.errors.count, "error") %> prohibited this sample from being saved:</h2>
+
+      <ul>
+        <% sample.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.text_field :code %>
+  </div>
+
+  <div>
+    <%= form.text_area :detail %>
+  </div>
+
+  <div>
+    <%= form.text_area :location %>
+  </div>
+
+  <div>
+    <%= form.text_field :plant %>
+  </div>
+
+  <div>
+    <%= form.text_field :ph_Weight %>
+  </div>
+
+  <div>
+    <%= form.text_field :ph_OR %>
+  </div>
+
+  <div>
+    <%= form.text_field :ph_1 %>
+  </div>
+
+  <div>
+    <%= form.text_field :ph_2 %>
+  </div>
+
+  <div>
+    <%= form.text_field :ph_3 %>
+  </div>
+
+  <div>
+    <%= form.primary %>
+  </div>
+<% end %>

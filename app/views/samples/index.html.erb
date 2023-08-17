@@ -1,0 +1,24 @@
+<h1>Samples</h1>
+
+<table class="table table-hover" id="samples">
+  <thead>
+    <tr>
+    <th scope="col">Code</th>
+    <th scope="col">Detail</th>
+    <th scope="col">Location</th>
+    <th scope="col">Plant</th>
+    <th scope="col">Ph weight</th>
+    <th scope="col">Ph or</th>
+    <th scope="col">Ph 1</th>
+    <th scope="col">Ph 2</th>
+    <th scope="col">Ph 3</th>
+    <th scope="col" colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render @samples %>
+  </tbody>
+</table>
+
+<%= link_to "New sample", new_sample_path, class: "btn btn-primary" %>
