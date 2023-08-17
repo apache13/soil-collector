@@ -2,21 +2,20 @@
   <strong>Name:</strong>
   <%= @customer.name %>
 </p>
-
 <p>
   <strong>Tel:</strong>
   <%= @customer.tel %>
 </p>
-
 <p>
   <strong>Address:</strong>
   <%= @customer.address %>
 </p>
-
 <p>
   <strong>Remark:</strong>
   <%= @customer.remark %>
 </p>
+
+<br>
 
 <%= link_to 'Edit', edit_customer_path(@customer) , class: "btn btn-warning btn-sm" %>
 <%= link_to 'Back', customers_path , class: "btn btn-light btn-sm" %>

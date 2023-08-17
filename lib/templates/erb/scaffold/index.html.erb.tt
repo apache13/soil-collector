@@ -1,18 +1,18 @@
 <h1><%= human_name.pluralize %></h1>
 
-<table class="table" id="<%= plural_table_name %>">
+<table class="table table-hover" id="<%= plural_table_name %>">
   <thead>
     <tr>
 <% attributes.reject(&:password_digest?).each do |attribute| -%>
 <% if attribute.attachment? -%>
-    <th>Download</th>
+    <th scope="col">Download</th>
 <% elsif attribute.attachments? -%>
-    <th>Downloads</th>
+    <th scope="col">Downloads</th>
 <% else -%>
-    <th><%= attribute.human_name %></th>
+    <th scope="col"><%= attribute.human_name %></th>
 <% end -%>
 <% end -%>
-    <th colspan="3"></th>
+    <th scope="col" colspan="3"></th>
     </tr>
   </thead>
 
