@@ -10,10 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_16_145956) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_17_141717) do
   create_table "customers", force: :cascade do |t|
     t.string "name"
-    t.string "tel"
+    t.string "phone"
+    t.string "email"
     t.text "address"
     t.text "remark"
     t.datetime "created_at", null: false

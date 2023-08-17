@@ -1,4 +1,4 @@
-<%= bootstrap_form_with(model: customer) do |form| %>
+<%= bootstrap_form_with(model: customer, layout: :horizontal) do |form| %>
   <% if customer.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(customer.errors.count, "error") %> prohibited this customer from being saved:</h2>
@@ -16,7 +16,11 @@
   </div>
 
   <div>
-    <%= form.text_field :tel %>
+    <%= form.text_field :phone %>
+  </div>
+
+  <div>
+    <%= form.text_field :email %>
   </div>
 
   <div>
