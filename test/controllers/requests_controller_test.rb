@@ -17,7 +17,7 @@ class RequestsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create request" do
     assert_difference("Request.count") do
-      post requests_url, params: { request: { channel: @request.channel, k: @request.k, lime: @request.lime, om: @request.om, p: @request.p, ph: @request.ph, receive: @request.receive, remark: @request.remark } }
+      post requests_url, params: { request: { channel: @request.channel, customer_id: @request.customer_id, k: @request.k, lime: @request.lime, om: @request.om, p: @request.p, ph: @request.ph, receive: @request.receive, remark: @request.remark } }
     end
 
     assert_redirected_to request_url(Request.last)
@@ -34,7 +34,7 @@ class RequestsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update request" do
-    patch request_url(@request), params: { request: { channel: @request.channel, k: @request.k, lime: @request.lime, om: @request.om, p: @request.p, ph: @request.ph, receive: @request.receive, remark: @request.remark } }
+    patch request_url(@request), params: { request: { channel: @request.channel, customer_id: @request.customer_id, k: @request.k, lime: @request.lime, om: @request.om, p: @request.p, ph: @request.ph, receive: @request.receive, remark: @request.remark } }
     assert_redirected_to request_url(@request)
   end
 

@@ -15,6 +15,7 @@ class RequestsTest < ApplicationSystemTestCase
     click_on "New request"
 
     fill_in "Channel", with: @request.channel
+    fill_in "Customer", with: @request.customer_id
     check "K" if @request.k
     check "Lime" if @request.lime
     check "Om" if @request.om
@@ -33,6 +34,7 @@ class RequestsTest < ApplicationSystemTestCase
     click_on "Edit this request", match: :first
 
     fill_in "Channel", with: @request.channel
+    fill_in "Customer", with: @request.customer_id
     check "K" if @request.k
     check "Lime" if @request.lime
     check "Om" if @request.om
