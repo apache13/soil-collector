@@ -1,0 +1,10 @@
+<div class="nested-form-wrapper" data-new-record="<%= f.object.new_record? %>">
+      <%= f.text_field :detail %>    
+      <button type="button" data-action="nested-form#remove" class="btn btn-danger btn-sm">Remove sample</button>
+      <%= f.hidden_field :_destroy %>
+
+      <% if !f.object.new_record? %>
+        <%= link_to 'Show', f.object, class: "btn btn-success btn-sm" %>
+        <%= link_to 'Edit', edit_sample_path(f.object) , class: "btn btn-warning btn-sm" %>
+      <% end %>
+</div>

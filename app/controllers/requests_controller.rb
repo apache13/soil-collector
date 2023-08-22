@@ -38,14 +38,15 @@ class RequestsController < ApplicationController
   def update
     respond_to do |format|
       if @request.update(request_params)
-        format.html { redirect_to request_url(@request), notice: "Request was successfully updated." }
-        format.json { render :show, status: :ok, location: @request }
+        #format.html { redirect_to request_url(@request), notice: "Request was successfully updated." }
+        #format.json { render :show, status: :ok, location: @request }
+        redirect_to samples_path
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @request.errors, status: :unprocessable_entity }
       end
     end
-  end
+  end 
 
   # DELETE /requests/1 or /requests/1.json
   def destroy
@@ -65,6 +66,6 @@ class RequestsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def request_params
-      params.require(:request).permit(:customer_id, :receive, :ph, :lime, :om, :p, :k, :channel, :remark)
+      params.require(:request).permit(:customer_id, :receive, :ph, :lime, :om, :p, :k, :channel, :remark, samples_attributes: [:id, :_destroy, :detail])
     end
 end

@@ -35,8 +35,35 @@
   <%= @request.remark %>
 </p>
 
+<h2>Sample</h2>
+
+<%= form_with model: @request, data: { controller: 'nested-form', nested_form_wrapper_selector_value: '.nested-form-wrapper' } do |f| %>
+  <template data-nested-form-target="template">
+    <%= f.fields_for :samples, Sample.new, child_index: 'NEW_RECORD' do |sample_fields| %>
+      <%= render "sample_form", f: sample_fields %>
+    <% end %>
+  </template>
+  
+  <ul class="list-group list-group-flush">
+  <%= f.fields_for :samples do |sample_fields| %>
+    <li class="list-group-item">
+      <%= render "sample_form", f: sample_fields %>
+    </li>
+  <% end %>
+  </ul>
+
+<br>
+
+  <!-- Inserted elements will be injected before that target. -->
+  <div data-nested-form-target="target"></div>
+  <button type="button" data-action="nested-form#add" class="btn btn-primary btn-sm">Add sample</button>
+  <%= f.submit('Save samples', class: "btn btn-secondary btn-sm") %>
+<% end %>
+
 <br>
 
 <%= link_to 'Edit', edit_request_path(@request) , class: "btn btn-warning btn-sm" %>
 <%= link_to 'Back', requests_path , class: "btn btn-light btn-sm" %>
 <%= button_to "Destroy", @post, method: :delete , class: "btn btn-danger btn-sm" %>
+
+

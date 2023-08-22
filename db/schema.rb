@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_21_131942) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_22_133257) do
   create_table "customers", force: :cascade do |t|
     t.string "name"
     t.string "phone"
@@ -37,18 +37,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_21_131942) do
   end
 
   create_table "samples", force: :cascade do |t|
+    t.integer "request_id", null: false
     t.string "code"
     t.text "detail"
     t.text "location"
     t.string "plant"
-    t.float "ph_Weight"
-    t.float "ph_OR"
-    t.float "ph_1"
-    t.float "ph_2"
-    t.float "ph_3"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["request_id"], name: "index_samples_on_request_id"
   end
 
   add_foreign_key "requests", "customers"
+  add_foreign_key "samples", "requests"
 end

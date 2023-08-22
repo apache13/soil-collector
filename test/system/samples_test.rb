@@ -17,12 +17,8 @@ class SamplesTest < ApplicationSystemTestCase
     fill_in "Code", with: @sample.code
     fill_in "Detail", with: @sample.detail
     fill_in "Location", with: @sample.location
-    fill_in "Ph 1", with: @sample.ph_1
-    fill_in "Ph 2", with: @sample.ph_2
-    fill_in "Ph 3", with: @sample.ph_3
-    fill_in "Ph or", with: @sample.ph_OR
-    fill_in "Ph weight", with: @sample.ph_Weight
     fill_in "Plant", with: @sample.plant
+    fill_in "Request", with: @sample.request_id
     click_on "Create Sample"
 
     assert_text "Sample was successfully created"
@@ -36,12 +32,8 @@ class SamplesTest < ApplicationSystemTestCase
     fill_in "Code", with: @sample.code
     fill_in "Detail", with: @sample.detail
     fill_in "Location", with: @sample.location
-    fill_in "Ph 1", with: @sample.ph_1
-    fill_in "Ph 2", with: @sample.ph_2
-    fill_in "Ph 3", with: @sample.ph_3
-    fill_in "Ph or", with: @sample.ph_OR
-    fill_in "Ph weight", with: @sample.ph_Weight
     fill_in "Plant", with: @sample.plant
+    fill_in "Request", with: @sample.request_id
     click_on "Update Sample"
 
     assert_text "Sample was successfully updated"

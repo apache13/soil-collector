@@ -17,7 +17,7 @@ class SamplesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create sample" do
     assert_difference("Sample.count") do
-      post samples_url, params: { sample: { code: @sample.code, detail: @sample.detail, location: @sample.location, ph_1: @sample.ph_1, ph_2: @sample.ph_2, ph_3: @sample.ph_3, ph_OR: @sample.ph_OR, ph_Weight: @sample.ph_Weight, plant: @sample.plant } }
+      post samples_url, params: { sample: { code: @sample.code, detail: @sample.detail, location: @sample.location, plant: @sample.plant, request_id: @sample.request_id } }
     end
 
     assert_redirected_to sample_url(Sample.last)
@@ -34,7 +34,7 @@ class SamplesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update sample" do
-    patch sample_url(@sample), params: { sample: { code: @sample.code, detail: @sample.detail, location: @sample.location, ph_1: @sample.ph_1, ph_2: @sample.ph_2, ph_3: @sample.ph_3, ph_OR: @sample.ph_OR, ph_Weight: @sample.ph_Weight, plant: @sample.plant } }
+    patch sample_url(@sample), params: { sample: { code: @sample.code, detail: @sample.detail, location: @sample.location, plant: @sample.plant, request_id: @sample.request_id } }
     assert_redirected_to sample_url(@sample)
   end
 
