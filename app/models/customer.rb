@@ -1,4 +1,8 @@
 class Customer < ApplicationRecord
+    
+    validates :name, presence: true
+    validates :phone, presence: true
+
     has_many :requests
     accepts_nested_attributes_for :requests, reject_if: :all_blank, allow_destroy: true
 
