@@ -8,6 +8,7 @@ class CustomersController < ApplicationController
 
   # GET /customers/1 or /customers/1.json
   def show
+    @channels= ['phone', 'email']
   end
 
   # GET /customers/new
@@ -16,7 +17,7 @@ class CustomersController < ApplicationController
   end
 
   # GET /customers/1/edit
-  def edit
+  def edit    
   end
 
   # POST /customers or /customers.json
@@ -38,8 +39,9 @@ class CustomersController < ApplicationController
   def update
     respond_to do |format|
       if @customer.update(customer_params)
-        format.html { redirect_to customer_url(@customer), notice: "Customer was successfully updated." }
-        format.json { render :show, status: :ok, location: @customer }
+        #format.html { redirect_to customer_url(@customer), notice: "Customer was successfully updated." }
+        #format.json { render :show, status: :ok, location: @customer }
+        redirect_to requests_path
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @customer.errors, status: :unprocessable_entity }
@@ -65,6 +67,6 @@ class CustomersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def customer_params
-      params.require(:customer).permit(:name, :phone, :email, :address, :remark)
+      params.require(:customer).permit(:name, :phone, :email, :address, :remark, requests_attributes: [:id, :_destroy, :receive, :channel, :remark])
     end
 end

@@ -1,0 +1,28 @@
+<div class="nested-form-wrapper row gx-3 gy-2 align-items-center" data-new-record="<%= f.object.new_record? %>">          
+      <div class="col-sm-3">
+        <div class="input-group">
+          <div class="input-group-text">Receive Date</div>          
+          <%= f.date_field :receive , class: "form-control"%>
+        </div>
+      </div>  
+      <div class="col-sm-3">
+        <div class="input-group">
+          <div class="input-group-text">Channel</div>          
+          <%= f.collection_select(:channel, @channels, :to_s, :to_s, {prompt: true}, {:class=>'form-select'}) %>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="input-group">
+          <div class="input-group-text">Remark</div>          
+          <%= f.text_field :remark , class: "form-control", placeholder: "Remark"%>
+        </div>
+      </div>
+      <div class="col-sm-3">        
+        <%= f.hidden_field :_destroy %>
+        <button type="button" data-action="nested-form#remove" class="btn btn-danger">Remove</button>        
+        <% if !f.object.new_record? %>
+          <%= link_to 'Show', f.object, class: "btn btn-success" %>
+          <%= link_to 'Edit', edit_request_path(f.object) , class: "btn btn-warning" %>
+        <% end %> 
+      </div>
+</div>
