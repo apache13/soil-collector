@@ -40,7 +40,7 @@
   </div>
 
   <div>
-    <%= form.text_field :channel %>
+    <%= form.collection_select(:channel, @channels, :to_s, :to_s, prompt: true) %>
   </div>
 
   <div>

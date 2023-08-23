@@ -1,7 +1,7 @@
 <tr>
     <td>    
     
-        <%= request.customer_id %>
+        <%= request.customer.name %>
     
     </td>
     <td>    
@@ -10,29 +10,39 @@
     
     </td>
     <td>    
-    
-        <%= request.ph %>
-    
+        <% if request.ph %>
+            <i class="bi bi-check-circle"></i>
+        <% else %>
+            <i class="bi bi-x-circle"></i>
+        <% end %>
+    </td>
+    <td>        
+        <% if request.lime %>
+            <i class="bi bi-check-circle"></i>
+        <% else %>
+            <i class="bi bi-x-circle"></i>
+        <% end %>    
     </td>
     <td>    
-    
-        <%= request.lime %>
-    
+        <% if request.om %>
+            <i class="bi bi-check-circle"></i>
+        <% else %>
+            <i class="bi bi-x-circle"></i>
+        <% end %>
     </td>
     <td>    
-    
-        <%= request.om %>
-    
+        <% if request.p %>
+            <i class="bi bi-check-circle"></i>
+        <% else %>
+            <i class="bi bi-x-circle"></i>
+        <% end %>
     </td>
-    <td>    
-    
-        <%= request.p %>
-    
-    </td>
-    <td>    
-    
-        <%= request.k %>
-    
+    <td>        
+        <% if request.k %>
+            <i class="bi bi-check-circle"></i>
+        <% else %>
+            <i class="bi bi-x-circle"></i>
+        <% end %>
     </td>
     <td>    
     
@@ -42,6 +52,11 @@
     <td>    
     
         <%= request.remark %>
+    
+    </td>
+    <td>    
+    
+        <%= request.samples.length %>
     
     </td>
     <td>

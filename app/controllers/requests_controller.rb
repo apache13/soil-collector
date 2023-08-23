@@ -13,10 +13,12 @@ class RequestsController < ApplicationController
   # GET /requests/new
   def new
     @request = Request.new
+    @channels= ['phone', 'email']
   end
 
   # GET /requests/1/edit
   def edit
+    @channels= ['phone', 'email']
   end
 
   # POST /requests or /requests.json
