@@ -1,6 +1,6 @@
 class Request < ApplicationRecord
   
-  validates :receive, presence: true
+  #validates :receive, presence: true
 
   belongs_to :customer
   has_many :samples
