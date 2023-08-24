@@ -1,0 +1,24 @@
+<h1>Samples</h1>
+<%= form_with model: @request, data: { controller: 'nested-form', nested_form_wrapper_selector_value: '.nested-form-wrapper' } do |f| %>
+  <template data-nested-form-target="template">
+    <ul class="list-group list-group-flush">
+    <%= f.fields_for :samples, Sample.new, child_index: 'NEW_RECORD' do |sample_fields| %>
+      <li class="list-group-item list-group-item-action">
+        <%= render "sample_form", f: sample_fields %>
+      </li>
+    <% end %>
+    </ul>
+  </template>
+  <ul class="list-group list-group-flush">
+  <%= f.fields_for :samples do |sample_fields| %>
+    <li class="list-group-item list-group-item-action list-group-item-light">
+      <%= render "sample_form", f: sample_fields %>
+    </li>
+  <% end %>
+  </ul>
+  <br>
+  <!-- Inserted elements will be injected before that target. -->
+  <div data-nested-form-target="target"></div>
+  <button type="button" data-action="nested-form#add" class="btn btn-primary">Add sample</button>
+  <%= f.submit('Save samples', class: "btn btn-secondary") %>
+<% end %>

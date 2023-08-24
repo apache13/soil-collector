@@ -1,3 +1,12 @@
 class Sample < ApplicationRecord
+  
   belongs_to :request
+
+  after_create :generate_sample_code
+
+  private
+    def generate_sample_code
+      update_attribute(:code, "S-#{format("%04d", self.request.id)}_#{self.request.samples.size}")
+    end
+
 end

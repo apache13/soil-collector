@@ -22,7 +22,7 @@ class RequestsController < ApplicationController
   end
 
   # POST /requests or /requests.json
-  def create
+  def create            
     @request = Request.new(request_params)
 
     respond_to do |format|
@@ -68,6 +68,6 @@ class RequestsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def request_params
-      params.require(:request).permit(:customer_id, :receive, :ph, :lime, :om, :p, :k, :channel, :remark, samples_attributes: [:id, :_destroy, :detail])
+      params.require(:request).permit(:customer_id, :receive, :ph, :lime, :om, :p, :k, :channel, :remark, samples_attributes: [:id, :_destroy, :detail, :location, :plant])
     end
 end

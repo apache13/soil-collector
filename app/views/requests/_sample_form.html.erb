@@ -1,10 +1,50 @@
-<div class="nested-form-wrapper" data-new-record="<%= f.object.new_record? %>">
-      <%= f.text_field :detail %>    
-      <button type="button" data-action="nested-form#remove" class="btn btn-danger btn-sm">Remove sample</button>
-      <%= f.hidden_field :_destroy %>
-
-      <% if !f.object.new_record? %>
-        <%= link_to 'Show', f.object, class: "btn btn-success btn-sm" %>
-        <%= link_to 'Edit', edit_sample_path(f.object) , class: "btn btn-warning btn-sm" %>
-      <% end %>
+<div class="nested-form-wrapper row align-items-center" data-new-record="<%= f.object.new_record? %>">
+      <div class="col-sm-1">
+        <div class="input-group input-group-sm">
+          <% if !f.object.new_record? %>
+            <div class="input-group-text">#</div>             
+            <%= f.text_field :id , html_options = {class: "form-control", disabled: true, readonly: true} %>
+          <% else %>
+            <div class="input-group-text">#</div>    
+            <div class="input-group-text">New</div>            
+          <% end %>
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="input-group input-group-sm">
+          <% if !f.object.new_record? %>
+            <div class="input-group-text">Code</div>
+            <%= f.text_field :code , html_options = {class: "form-control", disabled: true, readonly: true}%>
+          <% else %>
+            <div class="input-group-text">Code</div>
+            <div class="input-group-text">Auto Generate</div>            
+          <% end %>
+        </div>
+      </div> 
+      <div class="col-sm-2">
+        <div class="input-group input-group-sm">
+          <div class="input-group-text">Detail</div>
+          <%= f.text_field :detail , class: "form-control", placeholder: "Detail"%>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="input-group input-group-sm">
+          <div class="input-group-text">Location</div>
+          <%= f.text_field :location , class: "form-control", placeholder: "Location"%>
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="input-group input-group-sm">
+          <div class="input-group-text">Plant</div>
+          <%= f.text_field :plant , class: "form-control", placeholder: "Plant"%>
+        </div>
+      </div>
+      <div class="col-sm-2">        
+        <%= f.hidden_field :_destroy %>
+        <button type="button" data-action="nested-form#remove" class="btn btn-sm btn-danger">Remove</button>        
+        <% if !f.object.new_record? %>
+          <%= link_to 'Show', f.object, class: "btn btn-sm btn-success" %>
+          <%= link_to 'Edit', edit_request_path(f.object) , class: "btn btn-sm btn-warning" %>
+        <% end %> 
+      </div>
 </div>
