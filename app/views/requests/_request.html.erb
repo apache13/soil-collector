@@ -3,7 +3,7 @@
         <%= request.id %>
     </td>
     <td>    
-        <%= request.customer.name %>
+        <%= request.customer.display %>
     </td>
     <td>    
         <%= request.receive %>
@@ -52,11 +52,9 @@
             <i class="bi bi-x-circle"></i>
         <% end %>
     </td>        
-    <td>
-        <div class="row align-items-center">
-            <div class="col-2"><%= link_to 'Show', request, class: "btn btn-success btn-sm" %></div>
-            <div class="col-2"><%= link_to 'Edit', edit_request_path(request), class: "btn btn-warning btn-sm" %></div>
-            <div class="col-2"><%= button_to 'Destroy', request, method: :delete, form: {data: {turbo_confirm: 'Are you sure?'}}, class: "btn btn-danger btn-sm" %></div>
-        </div>
+    <td colspan="2">               
+        <%= link_to 'Show', request, class: "btn btn-success btn-sm" %>
+        <%= link_to 'Edit', edit_request_path(request), class: "btn btn-warning btn-sm" %>
+        <%= button_to 'Destroy', request, method: :delete, form: {data: {turbo_confirm: 'Are you sure?'}}, class: "btn btn-danger btn-sm", form: {style: 'display:inline-block;'}%>        
     </td>
 </tr>
