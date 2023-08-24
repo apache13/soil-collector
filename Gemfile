@@ -75,3 +75,4 @@ group :test do
 end
 
 gem 'bootstrap_form', '~> 5.2', '>= 5.2.3'
+gem 'kaminari', '~> 1.2', '>= 1.2.2'
