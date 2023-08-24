@@ -3,7 +3,8 @@ class RequestsController < ApplicationController
 
   # GET /requests or /requests.json
   def index
-    @requests = Request.all
+    # @requests = Request.all
+    @requests = Request.order(:id).page params[:page]
   end
 
   # GET /requests/1 or /requests/1.json

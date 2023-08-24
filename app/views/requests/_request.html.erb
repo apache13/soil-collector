@@ -1,13 +1,21 @@
 <tr>
-    <td>    
-    
-        <%= request.customer.name %>
-    
+    <td>        
+        <%= request.id %>
     </td>
     <td>    
-    
+        <%= request.customer.name %>
+    </td>
+    <td>    
         <%= request.receive %>
-    
+    </td>
+    <td>        
+        <%= request.channel %>    
+    </td>
+    <td>        
+        <%= request.remark %>    
+    </td>
+    <td>    
+        <%= request.samples.length %>
     </td>
     <td>    
         <% if request.ph %>
@@ -43,22 +51,7 @@
         <% else %>
             <i class="bi bi-x-circle"></i>
         <% end %>
-    </td>
-    <td>    
-    
-        <%= request.channel %>
-    
-    </td>
-    <td>    
-    
-        <%= request.remark %>
-    
-    </td>
-    <td>    
-    
-        <%= request.samples.length %>
-    
-    </td>
+    </td>        
     <td>
         <div class="row align-items-center">
             <div class="col-2"><%= link_to 'Show', request, class: "btn btn-success btn-sm" %></div>
