@@ -39,8 +39,9 @@ class SamplesController < ApplicationController
   def update
     respond_to do |format|
       if @sample.update(sample_params)
-        format.html { redirect_to sample_url(@sample), notice: "Sample was successfully updated." }
-        format.json { render :show, status: :ok, location: @sample }
+        # format.html { redirect_to sample_url(@sample), notice: "Sample was successfully updated." }
+        # format.json { render :show, status: :ok, location: @sample }
+        redirect_to phs_path
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @sample.errors, status: :unprocessable_entity }
@@ -66,6 +67,6 @@ class SamplesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def sample_params
-      params.require(:sample).permit(:request_id, :code, :detail, :location, :plant)
+      params.require(:sample).permit(:request_id, :code, :detail, :location, :plant, ph_attributes: [:id, :_destroy, :weight, :or, :ph1, :ph2, :ph3])
     end
 end
