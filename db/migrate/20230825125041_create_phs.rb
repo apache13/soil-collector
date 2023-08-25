@@ -1,7 +1,7 @@
 class CreatePhs < ActiveRecord::Migration[7.0]
   def change
     create_table :phs do |t|
-      t.belongs_to :sample
+      t.belongs_to :sample, null: false, foreign_key: true
       t.float :weight
       t.float :or
       t.float :ph1

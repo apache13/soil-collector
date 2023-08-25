@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :phs
   resources :samples
   resources :requests
   resources :customers
