@@ -9,7 +9,7 @@ class Sample < ApplicationRecord
 
   private
     def generate_sample_code
-      update_attribute(:code, "S-#{format("%04d", self.request.id)}_#{self.request.samples.size}")
+      update_attribute(:code, "S-#{format("%04d", self.request.id)}-#{format("%02d",self.request.samples.size)}")
     end
 
 end

@@ -1,29 +1,22 @@
 <tr>
     <td>        
-        <%= sample.request.customer.name %>    
+        <%= link_to sample.request.customer.display, sample.request.customer %>  
     </td>
-    <td>        
-        <%= sample.request_id %>    
+    <td>         
+        <%= link_to sample.request.code, sample.request %>  
     </td>
-    <td>    
-    
-        <%= sample.code %>
-    
     </td>
     <td>    
-    
+        <%= link_to sample.code, sample %>  
+    </td>
+    <td>    
         <%= sample.detail %>
-    
     </td>
     <td>    
-    
         <%= sample.location %>
-    
     </td>
     <td>    
-    
         <%= sample.plant %>
-    
     </td>
     <td>
         <div class="row align-items-center">

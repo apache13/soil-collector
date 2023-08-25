@@ -27,7 +27,7 @@
           <%= f.text_field :detail , class: "form-control", placeholder: "Detail"%>
         </div>
       </div>
-      <div class="col-sm-3">
+      <div class="col-sm-2">
         <div class="input-group input-group-sm">
           <div class="input-group-text">Location</div>
           <%= f.text_field :location , class: "form-control", placeholder: "Location"%>
@@ -39,7 +39,7 @@
           <%= f.text_field :plant , class: "form-control", placeholder: "Plant"%>
         </div>
       </div>
-      <div class="col-sm-2">        
+      <div class="col-sm-3">        
         <%= f.hidden_field :_destroy %>
         <button type="button" data-action="nested-form#remove" class="btn btn-sm btn-danger">Remove</button>        
         <% if !f.object.new_record? %>
