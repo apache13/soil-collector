@@ -6,7 +6,7 @@ class CreateSamples < ActiveRecord::Migration[7.0]
       t.text :detail
       t.text :location
       t.string :plant
-
+      
       t.timestamps
     end
   end

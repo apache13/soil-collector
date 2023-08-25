@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_24_171105) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_24_180655) do
   create_table "customers", force: :cascade do |t|
     t.string "name"
     t.string "phone"
@@ -20,6 +20,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_24_171105) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "code"
+  end
+
+  create_table "phs", force: :cascade do |t|
+    t.integer "sample_id"
+    t.float "weight"
+    t.float "or"
+    t.float "ph1"
+    t.float "ph2"
+    t.float "ph3"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["sample_id"], name: "index_phs_on_sample_id"
   end
 
   create_table "requests", force: :cascade do |t|

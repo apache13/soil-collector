@@ -1,0 +1,39 @@
+<h1>test</h1>
+<ul class="nav nav-tabs" id="test-list" role="tablist">
+    <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="ph-tab" data-bs-toggle="tab" data-bs-target="#ph" type="button" role="tab" aria-controls="ph" aria-selected="true">pH</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <% if sample.request.lime? %>
+            <button class="nav-link" id="lime-tab" data-bs-toggle="tab" data-bs-target="#lime" type="button" role="tab" aria-controls="lime" aria-selected="false">Lime</button>
+        <% else %>
+            <button class="nav-link disabled" id="lime-tab" data-bs-toggle="tab" data-bs-target="#lime" type="button" role="tab" aria-controls="lime" aria-selected="false">Lime</button>
+        <% end %>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="om-tab" data-bs-toggle="tab" data-bs-target="#om" type="button" role="tab" aria-controls="om" aria-selected="false">OM</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="p-tab" data-bs-toggle="tab" data-bs-target="#p" type="button" role="tab" aria-controls="p" aria-selected="false">P</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="k-tab" data-bs-toggle="tab" data-bs-target="#k" type="button" role="tab" aria-controls="k" aria-selected="false">K</button>
+    </li>
+</ul>
+<div class="tab-content" id="test-panel">
+    <div class="tab-pane fade show active" id="ph" role="tabpanel" aria-labelledby="ph-tab">
+        <%= render :partial => 'nested_test_ph', :locals => {:sample => sample} %>
+    </div>
+    <div class="tab-pane fade" id="lime" role="tabpanel" aria-labelledby="lime-tab">
+        <%= sample.request.lime %>
+    </div>
+    <div class="tab-pane fade" id="om" role="tabpanel" aria-labelledby="om-tab">
+        <%= sample.request.om %>
+    </div>
+    <div class="tab-pane fade" id="p" role="tabpanel" aria-labelledby="p-tab">
+        <%= sample.request.p %>
+    </div>
+    <div class="tab-pane fade" id="k" role="tabpanel" aria-labelledby="k-tab">
+        <%= sample.request.k %>
+    </div>
+</div>

@@ -20,7 +20,9 @@ r4 = Request.create({customer: c4, receive: Date.new(2023,9,4), channel: "email"
 r5 = Request.create({customer: c5, receive: Date.new(2023,9,5), channel: "phone", ph: true, lime: false, om: true, p: true, k: true})
 r6 = Request.create({customer: c6, receive: Date.new(2023,9,6), channel: "email", ph: true, lime: false, om: true, p: true, k: true})
 
-r1s1 = Sample.create({request: r1, detail: "สวนที่บ้าน", location: "จุดที่ 1", plant: "ทุเรียน"})
+ph1 = Ph.create({weight: 20.0, or: 20.0, ph1: 5.36, ph2: 5.45, ph3: 5.22})
+
+r1s1 = Sample.create({request: r1, detail: "สวนที่บ้าน", location: "จุดที่ 1", plant: "ทุเรียน", ph: ph1})
 r1s2 = Sample.create({request: r1, detail: "สวนที่บ้าน", location: "จุดที่ 2", plant: "ทุเรียน"})
 r1s3 = Sample.create({request: r1, detail: "สวนที่บ้าน", location: "จุดที่ 3", plant: "ทุเรียน"})
 r1s4 = Sample.create({request: r1, detail: "สวนที่บ้าน", location: "จุดที่ 4", plant: "ทุเรียน"})
@@ -29,3 +31,4 @@ r2s1 = Sample.create({request: r2, detail: "สวนที่บ้าน", loc
 r2s2 = Sample.create({request: r2, detail: "สวนที่บ้าน", location: "จุดที่ 2", plant: "มังคุุด"})
 r2s3 = Sample.create({request: r2, detail: "สวนที่บ้าน", location: "จุดที่ 3", plant: "มังคุุด"})
 r2s4 = Sample.create({request: r2, detail: "สวนที่บ้าน", location: "จุดที่ 4", plant: "มังคุุด"})
+
