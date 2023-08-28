@@ -1,0 +1,45 @@
+<h1>Report</h1>
+<p>
+  <strong>Customer:</strong>
+  <%= @request.customer.display %>
+</p>
+<p>
+  <strong>Receive:</strong>
+  <%= @request.receive %>
+</p>
+<p>
+  <strong>Ph:</strong>
+  <%= @request.ph %>
+</p>
+<p>
+  <strong>Lime:</strong>
+  <%= @request.lime %>
+</p>
+<p>
+  <strong>Om:</strong>
+  <%= @request.om %>
+</p>
+<p>
+  <strong>P:</strong>
+  <%= @request.p %>
+</p>
+<p>
+  <strong>K:</strong>
+  <%= @request.k %>
+</p>
+<p>
+  <strong>Channel:</strong>
+  <%= @request.channel %>
+</p>
+<p>
+  <strong>Remark:</strong>
+  <%= @request.remark %>
+</p>
+<div class="col-sm-4">
+  <%= link_to 'Edit', edit_request_path(@request) , class: "btn btn-warning" %>
+  <%= link_to 'Back', requests_path , class: "btn btn-light" %>
+  <%= button_to "Destroy", @post, method: :delete , class: "btn btn-danger", form: {style: 'display:inline-block;'} %>
+</div>
+<hr>
+
+

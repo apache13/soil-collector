@@ -1,5 +1,5 @@
 class RequestsController < ApplicationController
-  before_action :set_request, only: %i[ show edit update destroy ]
+  before_action :set_request, only: %i[ show edit update destroy report]
 
   # GET /requests or /requests.json
   def index
@@ -15,6 +15,11 @@ class RequestsController < ApplicationController
   def new
     @request = Request.new
     @channels= ['phone', 'email']
+  end
+
+  # GET /requests/1/report
+  def report
+    
   end
 
   # GET /requests/1/edit
