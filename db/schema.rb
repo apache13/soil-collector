@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_25_175644) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_28_135449) do
   create_table "customers", force: :cascade do |t|
     t.string "name"
     t.string "phone"
@@ -20,6 +20,34 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_25_175644) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "code"
+  end
+
+  create_table "limes", force: :cascade do |t|
+    t.integer "sample_id", null: false
+    t.float "weight"
+    t.float "woodruff"
+    t.float "ph1"
+    t.float "ph2"
+    t.float "ph3"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["sample_id"], name: "index_limes_on_sample_id"
+  end
+
+  create_table "oms", force: :cascade do |t|
+    t.integer "sample_id", null: false
+    t.float "weight"
+    t.float "K2CrO7_V1"
+    t.float "K2CrO7_N1"
+    t.float "FeSO4_1"
+    t.float "FeSO4_2"
+    t.float "FeSO4_3"
+    t.float "FeSO4_N2"
+    t.float "OC"
+    t.float "OM"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["sample_id"], name: "index_oms_on_sample_id"
   end
 
   create_table "phs", force: :cascade do |t|
@@ -61,6 +89,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_25_175644) do
     t.index ["request_id"], name: "index_samples_on_request_id"
   end
 
+  add_foreign_key "limes", "samples"
+  add_foreign_key "oms", "samples"
   add_foreign_key "phs", "samples"
   add_foreign_key "requests", "customers"
   add_foreign_key "samples", "requests"

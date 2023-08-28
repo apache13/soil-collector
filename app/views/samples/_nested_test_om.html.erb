@@ -1,0 +1,25 @@
+<div>
+    <%= form_with model: sample, data: { controller: 'nested-form', nested_form_wrapper_selector_value: '.nested-form-wrapper' } do |f| %>
+  <template data-nested-form-target="template">
+    <ul class="list-group list-group-flush">
+      <%= f.fields_for :om, Om.new, child_index: 'NEW_RECORD' do |om_fields| %>    
+      <li class="list-group-item list-group-item-action">
+        <%= render "om_form", f: om_fields %>
+      </li>
+      <% end %>
+     </ul>
+  </template>
+  <ul class="list-group list-group-flush">
+    <%= f.fields_for :om do |om_fields| %>
+      <li class="list-group-item list-group-item-action list-group-item-light">
+        <%= render "om_form", f: om_fields %>
+      </li>
+    <% end %>
+  </ul>
+  <br>
+  <!-- Inserted elements will be injected before that target. -->
+  <div data-nested-form-target="target"></div>
+  <button type="button" data-action="nested-form#add" class="btn btn-primary">Add</button>
+  <%= f.submit('Save', class: "btn btn-secondary") %>
+<% end %>
+</div>

@@ -1,0 +1,41 @@
+<%= bootstrap_form_with(model: lime, layout: :horizontal) do |form| %>
+  <% if lime.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(lime.errors.count, "error") %> prohibited this lime from being saved:</h2>
+
+      <ul>
+        <% lime.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.text_field :sample_id %>
+  </div>
+
+  <div>
+    <%= form.text_field :weight %>
+  </div>
+
+  <div>
+    <%= form.text_field :woodruff %>
+  </div>
+
+  <div>
+    <%= form.text_field :ph1 %>
+  </div>
+
+  <div>
+    <%= form.text_field :ph2 %>
+  </div>
+
+  <div>
+    <%= form.text_field :ph3 %>
+  </div>
+
+  <div>
+    <%= form.primary %>
+  </div>
+<% end %>

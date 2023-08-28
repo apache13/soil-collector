@@ -1,0 +1,39 @@
+<tr>
+    <td>    
+    
+        <%= lime.sample_id %>
+    
+    </td>
+    <td>    
+    
+        <%= lime.weight %>
+    
+    </td>
+    <td>    
+    
+        <%= lime.woodruff %>
+    
+    </td>
+    <td>    
+    
+        <%= lime.ph1 %>
+    
+    </td>
+    <td>    
+    
+        <%= lime.ph2 %>
+    
+    </td>
+    <td>    
+    
+        <%= lime.ph3 %>
+    
+    </td>
+    <td>
+        <td colspan="2">
+            <%= link_to 'Show', lime, class: "btn btn-success btn-sm" %>
+            <%= link_to 'Edit', edit_lime_path(lime), class: "btn btn-warning btn-sm" %>
+            <%= button_to 'Destroy', lime, method: :delete, form: {data: {turbo_confirm: 'Are you sure?'}}, class: "btn btn-danger btn-sm", form: {style: 'display:inline-block;'} %>
+        </div>
+    </td>
+</tr>

@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sample: one
+  weight: 1.5
+  K2CrO7_V1: 1.5
+  K2CrO7_N1: 1.5
+  FeSO4_1: 1.5
+  FeSO4_2: 1.5
+  FeSO4_3: 1.5
+  FeSO4_N2: 1.5
+  OC: 1.5
+  OM: 1.5
+
+two:
+  sample: two
+  weight: 1.5
+  K2CrO7_V1: 1.5
+  K2CrO7_N1: 1.5
+  FeSO4_1: 1.5
+  FeSO4_2: 1.5
+  FeSO4_3: 1.5
+  FeSO4_N2: 1.5
+  OC: 1.5
+  OM: 1.5

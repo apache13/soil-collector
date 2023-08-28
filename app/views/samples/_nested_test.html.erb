@@ -25,10 +25,10 @@
         <%= render :partial => 'nested_test_ph', :locals => {:sample => sample} %>
     </div>
     <div class="tab-pane fade" id="lime" role="tabpanel" aria-labelledby="lime-tab">
-        <%= sample.request.lime %>
+        <%= render :partial => 'nested_test_lime', :locals => {:sample => sample} %>
     </div>
     <div class="tab-pane fade" id="om" role="tabpanel" aria-labelledby="om-tab">
-        <%= sample.request.om %>
+        <%= render :partial => 'nested_test_om', :locals => {:sample => sample} %>
     </div>
     <div class="tab-pane fade" id="p" role="tabpanel" aria-labelledby="p-tab">
         <%= sample.request.p %>

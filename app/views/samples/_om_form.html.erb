@@ -1,0 +1,61 @@
+<div class="nested-form-wrapper row align-items-center" data-new-record="<%= f.object.new_record? %>">          
+      <div class="col-sm-2">
+        <div class="input-group input-group-sm">
+          <div class="input-group-text">Weight</div>          
+          <%= f.text_field :weight , class: "form-control", placeholder: "gram"%>
+        </div>
+      </div>                 
+      <div class="col-sm-2">
+        <div class="input-group input-group-sm">
+          <div class="input-group-text">K2CrO7 V1</div>          
+          <%= f.text_field :K2CrO7_V1 , class: "form-control", placeholder: "mL"%>
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="input-group input-group-sm">
+          <div class="input-group-text">K2CrO7 N1</div>          
+          <%= f.text_field :K2CrO7_N1 , class: "form-control", placeholder: "N"%>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="input-group input-group-sm">
+          <div class="input-group-text">FeSO4</div>
+          <%= f.text_field :FeSO4_1 , class: "form-control", placeholder: "#1"%>
+          <%= f.text_field :FeSO4_2 , class: "form-control", placeholder: "#2"%>
+          <%= f.text_field :FeSO4_3 , class: "form-control", placeholder: "#3"%>
+        </div>
+      </div>
+       <div class="col-sm-2">
+        <div class="input-group input-group-sm">
+          <div class="input-group-text">FeSO4 Avg</div>             
+          <%= f.text_field :FeSO4_Avg , html_options = {class: "form-control", disabled: true, readonly: true} %>
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="input-group input-group-sm">
+          <div class="input-group-text">FeSO4 N2</div>          
+          <%= f.text_field :FeSO4_N2 , class: "form-control", placeholder: "N"%>
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="input-group input-group-sm">
+          <div class="input-group-text">%OC</div>          
+          <%= f.text_field :OC , class: "form-control", placeholder: "%"%>
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="input-group input-group-sm">
+          <div class="input-group-text">%OM</div>          
+          <%= f.text_field :OM , class: "form-control", placeholder: "%"%>
+        </div>
+      </div>
+     
+      <div class="col-sm-3">        
+        <%= f.hidden_field :_destroy %>
+        <button type="button" data-action="nested-form#remove" class="btn btn-sm btn-danger">Remove</button>        
+        <% if !f.object.new_record? %>
+          <%= link_to 'Show', f.object, class: "btn btn-sm btn-success" %>
+          <%= link_to 'Edit', edit_ph_path(f.object) , class: "btn btn-sm btn-warning" %>
+        <% end %> 
+      </div>
+</div>

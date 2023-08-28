@@ -67,6 +67,6 @@ class SamplesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def sample_params
-      params.require(:sample).permit(:request_id, :code, :detail, :location, :plant, ph_attributes: [:id, :_destroy, :weight, :or, :ph1, :ph2, :ph3])
+      params.require(:sample).permit(:request_id, :code, :detail, :location, :plant, ph_attributes: [:id, :_destroy, :weight, :or, :ph1, :ph2, :ph3], lime_attributes: [:id, :_destroy, :weight, :woodruff, :ph1, :ph2, :ph3], om_attributes: [:id, :_destroy, :weight, :K2CrO7_V1, :K2CrO7_N1, :FeSO4_1, :FeSO4_2, :FeSO4_3, :FeSO4_N2, :OC, :OM])
     end
 end

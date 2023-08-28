@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :limes
+  resources :oms
   resources :phs
   resources :samples
   resources :requests

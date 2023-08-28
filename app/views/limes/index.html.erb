@@ -1,0 +1,21 @@
+<h1>Limes</h1>
+
+<table class="table table-hover" id="limes">
+  <thead class="table-primary">    
+    <tr>
+    <th scope="col">Sample</th>
+    <th scope="col">Weight</th>
+    <th scope="col">Woodruff</th>
+    <th scope="col">Ph1</th>
+    <th scope="col">Ph2</th>
+    <th scope="col">Ph3</th>
+    <th scope="col" colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render @limes %>
+  </tbody>
+</table>
+
+<%= link_to "New lime", new_lime_path, class: "btn btn-primary" %>

@@ -1,0 +1,48 @@
+<p>
+  <strong>Sample:</strong>
+  <%= @om.sample_id %>
+</p>
+<p>
+  <strong>Weight:</strong>
+  <%= @om.weight %>
+</p>
+<p>
+  <strong>K2cro7 v1:</strong>
+  <%= @om.K2CrO7_V1 %>
+</p>
+<p>
+  <strong>K2cro7 n1:</strong>
+  <%= @om.K2CrO7_N1 %>
+</p>
+<p>
+  <strong>Feso4 1:</strong>
+  <%= @om.FeSO4_1 %>
+</p>
+<p>
+  <strong>Feso4 2:</strong>
+  <%= @om.FeSO4_2 %>
+</p>
+<p>
+  <strong>Feso4 3:</strong>
+  <%= @om.FeSO4_3 %>
+</p>
+<p>
+  <strong>Feso4 n2:</strong>
+  <%= @om.FeSO4_N2 %>
+</p>
+<p>
+  <strong>Oc:</strong>
+  <%= @om.OC %>
+</p>
+<p>
+  <strong>Om:</strong>
+  <%= @om.OM %>
+</p>
+
+<br>
+
+<div class="col-sm-4">
+<%= link_to 'Edit', edit_om_path(@om) , class: "btn btn-warning" %>
+<%= link_to 'Back', oms_path , class: "btn btn-light" %>
+<%= button_to "Destroy", @post, method: :delete , class: "btn btn-danger", form: {style: 'display:inline-block;'}%>
+</div>
