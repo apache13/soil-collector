@@ -3,13 +3,16 @@
         <%= request.id %>
     </td>
     <td>    
-        <%= link_to request.customer.display, request.customer %>
-    </td>
-    <td>    
         <%= link_to request.code, request %>
     </td>
     <td>    
+        <%= link_to request.customer.display, request.customer %>
+    </td>
+    <td>    
         <%= request.receive %>
+    </td>
+    <td>        
+        <%= request.receipt %>    
     </td>
     <td>        
         <%= request.channel %>    
@@ -22,39 +25,42 @@
     </td>
     <td>    
         <% if request.ph %>
-            <i class="bi bi-check-circle"></i>
+            <i class="bi bi-check-circle text-success"></i>
         <% else %>
-            <i class="bi bi-x-circle"></i>
+            <i class="bi bi-x-circle text-danger"></i>
         <% end %>
     </td>
     <td>        
         <% if request.lime %>
-            <i class="bi bi-check-circle"></i>
+            <i class="bi bi-check-circle text-success"></i>
         <% else %>
-            <i class="bi bi-x-circle"></i>
+            <i class="bi bi-x-circle text-danger"></i>
         <% end %>    
     </td>
     <td>    
         <% if request.om %>
-            <i class="bi bi-check-circle"></i>
+            <i class="bi bi-check-circle text-success"></i>
         <% else %>
-            <i class="bi bi-x-circle"></i>
+            <i class="bi bi-x-circle text-danger"></i>
         <% end %>
     </td>
     <td>    
         <% if request.p %>
-            <i class="bi bi-check-circle"></i>
+            <i class="bi bi-check-circle text-success"></i>
         <% else %>
-            <i class="bi bi-x-circle"></i>
+            <i class="bi bi-x-circle text-danger"></i>
         <% end %>
     </td>
     <td>        
         <% if request.k %>
-            <i class="bi bi-check-circle"></i>
+            <i class="bi bi-check-circle text-success"></i>
         <% else %>
-            <i class="bi bi-x-circle"></i>
+            <i class="bi bi-x-circle text-danger"></i>
         <% end %>
-    </td>        
+    </td>       
+    <td>    
+        <%= request.analyzed %>
+    </td> 
     <td colspan="2">               
         <%= link_to 'Report', report_request_path(request), class: "btn btn-info btn-sm", target: :_blank %>
         <%= link_to 'Show', request, class: "btn btn-success btn-sm" %>

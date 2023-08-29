@@ -1,4 +1,5 @@
-<table border="1">
+<div>
+<table>
     <tr>
         <th colspan=2>รหัสตัวอย่าง</th>
         <th colspan=2><p><sub>ความเป็นกรด-ด่าง</sub>1/</p></th>
@@ -22,29 +23,30 @@
     </tr>
     <% @request.samples.each do |sample| %>
     <tr>
-        <td><%= sample.code %></td>
+        <td style="text-align:start"><%= sample.code %></td>
         <td></td>
         <%if sample.ph.nil? %>
-            <td style="text-align:center">n/a</td>
+            <td>n/a</td>
             <td>n/a</td>
         <% else %>
-            <td style="text-align:center"><%= sample.ph.avg %></td>
+            <td><%= sample.ph.avg %></td>
             <td><%= sample.ph.level %></td>
         <%end%>
         <%if sample.lime.nil? %>
-            <td style="text-align:center">n/a</td>
-        <% else %>
-            <td style="text-align:center"><%= sample.lime.avg %></td>
-        <%end%>
-        <%if sample.om.nil? %>
-            <td style="text-align:center">n/a</td>
             <td>n/a</td>
         <% else %>
-            <td style="text-align:center"><%= sample.om.OM %></td>
+            <td><%= sample.lime.avg %></td>
+        <%end%>
+        <%if sample.om.nil? %>
+            <td>n/a</td>
+            <td>n/a</td>
+        <% else %>
+            <td><%= sample.om.OM %></td>
             <td><%= sample.om.level %></td>
         <%end%>
     </tr>
     <% end %>
 </table>
+</div>
 <br>
 <article><small>1/  ดิน : น้ำ (1:1),  2/ โดยวิธี Woodruff,  3/ โดยวิธี Walkley and Black (ทัศนีย์และจงรักษ์, 2542).4/โดยวิธี Bray II (ทัศนีย์และจงรักษ์, 2542), 5/ สกัดด้วย1 N NH4OAc และวิเคราะห์หาปริมาณโดยใช้ ICP-OES (Reeuwijk, 2002)</small></article>

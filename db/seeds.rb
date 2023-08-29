@@ -13,20 +13,24 @@ c4 = Customer.create({name: "Thor Odinson", phone: "081-9999999", email: "test@t
 c5 = Customer.create({name: "Natasha Romanoff", phone: "081-9999999", email: "test@test", address: "USA", remark: "Black Widow"})
 c6 = Customer.create({name: "Stephen Strange", phone: "081-9999999", email: "test@test", address: "Tibet", remark: "Doctor Strange"})
 
-r1 = Request.create({customer: c1, receive: Date.new(2023,9,1), channel: "phone", ph: true, lime: true, om: true, p: true, k: true})
-r2 = Request.create({customer: c2, receive: Date.new(2023,9,2), channel: "email", ph: true, lime: false, om: true, p: true, k: true})
-r3 = Request.create({customer: c3, receive: Date.new(2023,9,3), channel: "phone", ph: true, lime: false, om: true, p: true, k: true})
-r4 = Request.create({customer: c4, receive: Date.new(2023,9,4), channel: "email", ph: true, lime: false, om: true, p: true, k: true})
-r5 = Request.create({customer: c5, receive: Date.new(2023,9,5), channel: "phone", ph: true, lime: false, om: true, p: true, k: true})
-r6 = Request.create({customer: c6, receive: Date.new(2023,9,6), channel: "email", ph: true, lime: false, om: true, p: true, k: true})
+r1 = Request.create({customer: c1, receive: Date.new(2023,9,1), receipt: 12345, channel: "phone", ph: true, lime: true, om: true, p: true, k: true, analyzed: Date.new(2023,10,1)})
+r2 = Request.create({customer: c2, receive: Date.new(2023,9,2), receipt: 12345, channel: "email", ph: true, lime: false, om: true, p: true, k: true, analyzed: Date.new(2023,10,1)})
+r3 = Request.create({customer: c3, receive: Date.new(2023,9,3), receipt: 12345, channel: "phone", ph: true, lime: false, om: true, p: true, k: true, analyzed: Date.new(2023,10,1)})
+r4 = Request.create({customer: c4, receive: Date.new(2023,9,4), receipt: 12345, channel: "email", ph: true, lime: false, om: true, p: true, k: true, analyzed: Date.new(2023,10,1)})
+r5 = Request.create({customer: c5, receive: Date.new(2023,9,5), receipt: 12345, channel: "phone", ph: true, lime: false, om: true, p: true, k: true, analyzed: Date.new(2023,10,1)})
+r6 = Request.create({customer: c6, receive: Date.new(2023,9,6), receipt: 12345, channel: "email", ph: true, lime: false, om: true, p: true, k: true, analyzed: Date.new(2023,10,1)})
 
 ph1 = Ph.create({weight: 20.0, or: 20.0, ph1: 5.36, ph2: 5.45, ph3: 5.22})
 lime1 = Lime.create({weight: 20.0, woodruff: 20.0, ph1: 5.36, ph2: 5.45, ph3: 5.43})
 om1 = Om.create({weight: 20.0, K2CrO7_V1: 1.0, K2CrO7_N1: 1.0, FeSO4_1: 5.0, FeSO4_2: 4.9, FeSO4_3: 5.1, FeSO4_N2: 0.47, OC: 1.06, OM: 1.82})
 
+ph2 = Ph.create({weight: 20.0, or: 20.0, ph1: 5.36, ph2: 5.45, ph3: 5.22})
+lime2 = Lime.create({weight: 20.0, woodruff: 20.0, ph1: 5.36, ph2: 5.45, ph3: 5.43})
+om2 = Om.create({weight: 20.0, K2CrO7_V1: 1.0, K2CrO7_N1: 1.0, FeSO4_1: 5.0, FeSO4_2: 4.9, FeSO4_3: 5.1, FeSO4_N2: 0.47, OC: 1.06, OM: 1.82})
+
 
 r1s1 = Sample.create({request: r1, detail: "สวนที่บ้าน", location: "จุดที่ 1", plant: "ทุเรียน", ph: ph1, lime: lime1, om: om1})
-r1s2 = Sample.create({request: r1, detail: "สวนที่บ้าน", location: "จุดที่ 2", plant: "ทุเรียน"})
+r1s2 = Sample.create({request: r1, detail: "สวนที่บ้าน", location: "จุดที่ 2", plant: "ทุเรียน", ph: ph2, lime: lime2, om: om2})
 r1s3 = Sample.create({request: r1, detail: "สวนที่บ้าน", location: "จุดที่ 3", plant: "ทุเรียน"})
 r1s4 = Sample.create({request: r1, detail: "สวนที่บ้าน", location: "จุดที่ 4", plant: "ทุเรียน"})
 

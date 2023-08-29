@@ -1,6 +1,26 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun&display=swap" rel="stylesheet">
+
 <style>
 @page { margin: 0 }
-body { margin: 0 }
+body, article{ 
+  margin: 0;
+  font-family: 'Sarabun', sans-serif;
+  font-size: 16px;
+}
+small, sub, p {
+  font-size: 12px;
+}
+table, th, td {
+  width: 100%;
+  table-layout: fixed;
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: center;
+  font-family: 'Sarabun', sans-serif;
+  font-size: 12px;
+}
 .sheet {
   margin: 0;
   overflow: hidden;
@@ -42,14 +62,33 @@ body.A5.landscape .sheet { width: 210mm; height: 147mm }
 }
 
 .column {
-    float: left;
-    width: 50%;
+  float: left;
+  width: 50%;
 }
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column-header {
+  float: left;
+}
+
+.left-header {
+  width: 70%;
+}
+
+.right-header {
+  width: 30%;
+}
+
 /* Clear floats after the columns */
 .row:after {
-    content: "";
-    display: table;
-    clear: both;
+  content: "";
+  display: table;
+  clear: both;
 }
 .footer {
   display: table-footer-group;
