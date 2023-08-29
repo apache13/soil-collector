@@ -1,6 +1,6 @@
 class RequestsController < ApplicationController
   before_action :set_request, only: %i[ show edit update destroy report]
-
+  layout false, only: [:report]
   # GET /requests or /requests.json
   def index
     # @requests = Request.all
