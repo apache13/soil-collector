@@ -19,7 +19,9 @@
   <br>
   <!-- Inserted elements will be injected before that target. -->
   <div data-nested-form-target="target"></div>
-  <button type="button" data-action="nested-form#add" class="btn btn-primary">Add</button>
+   <% if f.object.lime.nil? %>
+    <button type="button" data-action="nested-form#add" class="btn btn-primary">Add</button>
+  <% end %>
   <%= f.submit('Save', class: "btn btn-secondary") %>
 <% end %>
 </div>

@@ -3,7 +3,7 @@
         <%= request.id %>
     </td>
     <td>    
-        <%= link_to request.code, request %>
+        <%= request.code %>
     </td>
     <td>    
         <%= link_to request.customer.display, request.customer %>
@@ -65,6 +65,6 @@
         <%= link_to 'Report', report_request_path(request), class: "btn btn-info btn-sm", target: :_blank %>
         <%= link_to 'Show', request, class: "btn btn-success btn-sm" %>
         <%= link_to 'Edit', edit_request_path(request), class: "btn btn-warning btn-sm" %>
-        <%= button_to 'Destroy', request, method: :delete, form: {data: {turbo_confirm: 'Are you sure?'}}, class: "btn btn-danger btn-sm", form: {style: 'display:inline-block;'}%>        
+        <%= button_to 'Destroy', request, method: :delete, form: {data: {turbo_confirm: 'Are you sure?'}, style: 'display:inline-block;'}, class: "btn btn-danger btn-sm" %>        
     </td>
 </tr>
