@@ -42,7 +42,8 @@ class CustomersController < ApplicationController
       if @customer.update(customer_params)
         #format.html { redirect_to customer_url(@customer), notice: "Customer was successfully updated." }
         #format.json { render :show, status: :ok, location: @customer }
-        redirect_to requests_path
+        redirect_to customers_path
+        return
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @customer.errors, status: :unprocessable_entity }
@@ -68,6 +69,7 @@ class CustomersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def customer_params
-      params.require(:customer).permit(:code, :name, :phone, :email, :address, :remark, requests_attributes: [:id, :_destroy, :receive, :receipt, :channel, :remark, :ph, :lime, :om, :p, :k, :analyzed])
+      params.require(:customer).permit(:code, :name, :phone, :email, :address, :remark, requests_attributes: [:id, :_destroy, :receive, :receipt, :channel, :remark, :ph, :lime, :om, :p, :k, :analyzed, :code])
+      #params.require(:customer).permit(:code, :name, :phone, :email, :address, :remark)
     end
 end

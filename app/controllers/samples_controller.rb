@@ -41,7 +41,8 @@ class SamplesController < ApplicationController
       if @sample.update(sample_params)
         # format.html { redirect_to sample_url(@sample), notice: "Sample was successfully updated." }
         # format.json { render :show, status: :ok, location: @sample }
-        redirect_to phs_path
+        redirect_to samples_path
+        return
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @sample.errors, status: :unprocessable_entity }

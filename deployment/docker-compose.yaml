@@ -1,0 +1,42 @@
+version: "3.8"
+services:
+  traefik:
+    image: traefik:v2.10.4
+    environment:
+      TZ: Asia/Bangkok
+    ports:
+      - 3000:3000
+      - 9000:9000
+    command:
+      - "--log.level=INFO"
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.traefik.address=:9000"    
+      - "--entrypoints.web.address=:3000"      
+      - "--accesslog.fields.names.StartUTC=drop"
+      - "--accesslog=true"
+      - "--accesslog.filepath=/log/access.log"
+      - "--accesslog.bufferingsize=100"
+    volumes:            
+        - /var/run/docker.sock:/var/run/docker.sock:ro
+        - ./traefik/log:/log:rw
+    networks:
+      - soil-network        
+  soil-collector:
+    image: soil-collector
+    environment:
+      TZ: Asia/Bangkok
+      RAILS_ENV: production
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.soil-collector.entrypoints=web"
+      - "traefik.http.routers.soil-collector.rule=PathPrefix(`/`)"
+    volumes:            
+        - ./soil-collector/log:/app/soil-collector/log:rw
+        - ./soil-collector/db:/app/soil-collector/production/db:rw
+    networks:
+      - soil-network      
+networks:
+  soil-network:
+    name: soil-network      

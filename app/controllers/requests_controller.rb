@@ -48,7 +48,8 @@ class RequestsController < ApplicationController
       if @request.update(request_params)
         #format.html { redirect_to request_url(@request), notice: "Request was successfully updated." }
         #format.json { render :show, status: :ok, location: @request }
-        redirect_to samples_path
+        redirect_to requests_path
+        return
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @request.errors, status: :unprocessable_entity }
