@@ -8,7 +8,7 @@ RUN apt-get install -y nodejs
 
 RUN npm install --global yarn
 
-WORKDIR /app/soil-collector
+WORKDIR /app/soil
 
 RUN gem install bundler
 
@@ -16,7 +16,7 @@ COPY Gemfile* ./
 
 RUN bundle install
 
-ADD . /app/soil-collector
+ADD . /app/soil
 
 RUN rails RAILS_ENV=production assets:precompile
 

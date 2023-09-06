@@ -23,7 +23,7 @@ services:
     networks:
       - soil-network        
   soil:
-    image: soil-collector:latest
+    image: soil:latest
     environment:
       TZ: Asia/Bangkok
       RAILS_ENV: production
@@ -32,8 +32,8 @@ services:
       - "traefik.http.routers.soil.entrypoints=soil"
       - "traefik.http.routers.soil.rule=PathPrefix(`/`)"
     volumes:            
-      - ./soil/database.yml:/app/soil-collector/config/database.yml:ro
-      - ./soil/log:/app/soil-collector/log:rw      
+      - ./soil/database.yml:/app/soil/config/database.yml:ro
+      - ./soil/log:/app/soil/log:rw      
     networks:
       - soil-network      
   postgres:
@@ -45,7 +45,7 @@ services:
       POSTGRES_PASSWORD: P@ssw0rd
       PGDATA: /var/lib/postgresql/data/pgdata
     volumes:            
-        - ./postgres/data:/var/lib/postgresql/data:rw
+      - ./postgres/data:/var/lib/postgresql/data:rw
     networks:
       - soil-network       
   adminer:
