@@ -1,1 +1,1 @@
-docker build -t soil-collector .
+docker build -t soil-collector:latest .
