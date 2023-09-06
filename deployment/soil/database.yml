@@ -1,0 +1,9 @@
+production:
+  adapter: postgresql
+  encoding: unicode
+  host: postgres
+  port: 5432
+  database: soil
+  pool: 5
+  username: soil
+  password: P@ssw0rd
