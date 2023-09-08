@@ -17,5 +17,8 @@ class Sample < ApplicationRecord
     def generate_sample_code
       update_attribute(:code, "S-#{format("%04d", self.request.id)}-#{format("%02d",self.request.samples.size)}")
     end
+    def self.ransackable_attributes(auth_object = nil)
+      ["code"]
+    end
 
 end

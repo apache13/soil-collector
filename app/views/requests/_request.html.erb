@@ -10,16 +10,7 @@
     </td>
     <td>    
         <%= request.receive %>
-    </td>
-    <td>        
-        <%= request.receipt %>    
-    </td>
-    <td>        
-        <%= request.channel %>    
-    </td>
-    <td>        
-        <%= request.remark %>    
-    </td>
+    </td>    
     <td>    
         <%= request.samples.length %>
     </td>
@@ -58,6 +49,9 @@
             <i class="bi bi-x-circle text-danger"></i>
         <% end %>
     </td>       
+    <td>        
+        <%= request.receipt %>    
+    </td>
     <td>    
         <%= request.analyzed %>
     </td> 

@@ -3,8 +3,8 @@ class RequestsController < ApplicationController
   layout false, only: [:report]
   # GET /requests or /requests.json
   def index
-    # @requests = Request.all
-    @requests = Request.order(:id).page params[:page]
+    @q = Request.ransack(params[:q])
+    @requests = @q.result().order(:id).page(params[:page])
   end
 
   # GET /requests/1 or /requests/1.json

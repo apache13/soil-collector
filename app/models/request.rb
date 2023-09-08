@@ -11,4 +11,8 @@ class Request < ApplicationRecord
     def generate_request_code
       update_attribute(:code, "R-#{format("%04d", self.id)}")
     end
+    def self.ransackable_attributes(auth_object = nil)
+      ["code", "receive"]
+    end
+
 end

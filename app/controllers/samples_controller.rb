@@ -3,8 +3,8 @@ class SamplesController < ApplicationController
 
   # GET /samples or /samples.json
   def index
-    # @samples = Sample.all
-    @samples = Sample.order(:id).page params[:page]
+    @q = Sample.ransack(params[:q])
+    @samples = @q.result().order(:id).page(params[:page])
   end
 
   # GET /samples/1 or /samples/1.json

@@ -1,13 +1,15 @@
 <h1>Samples</h1>
 
+<%= render "search_sample" %>
+<br/>
+
 <table class="table table-hover" id="samples">
   <thead class="table-primary">
     <tr>
     <th scope="col">#</th>
-    <th scope="col">Code</th>
+    <th><%= sort_link(@q, :code) %></th>
     <th scope="col">Customer</th>
     <th scope="col">Request</th>
-    <th scope="col">Code</th>
     <th scope="col">Detail</th>
     <th scope="col">Location</th>
     <th scope="col">Plant</th>
@@ -22,4 +24,4 @@
 
 <%= paginate @samples %>
 
-<%= link_to "New sample", new_sample_path, class: "btn btn-primary" %>
+<%= link_to "New sample", new_sample_path, class: "btn btn-sm btn-primary" %>

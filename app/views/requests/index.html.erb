@@ -1,21 +1,22 @@
 <h1>Requests</h1>
 
+<%= render "search_request" %>
+<br/>
+
 <table class="table table-hover">
   <thead class="table-primary">
     <tr>
     <th scope="col">#</th>
-    <th scope="col">Code</th>
+    <th><%= sort_link(@q, :code) %></th>
     <th scope="col">Customer</th>
-    <th scope="col">Receive</th>
-    <th scope="col">Receipt</th>  
-    <th scope="col">Channel</th>
-    <th scope="col">Remark</th>
+    <th><%= sort_link(@q, :receive) %></th>
     <th scope="col">Samples</th>
     <th scope="col">pH</th>
     <th scope="col">Lime</th>
     <th scope="col">OM</th>
     <th scope="col">P</th>
     <th scope="col">K</th>    
+    <th scope="col">Receipt</th> 
     <th scope="col">Analyzed</th>    
     <th scope="col" colspan="3"></th>
     </tr>
@@ -28,4 +29,4 @@
 
 <%= paginate @requests %>
 
-<%= link_to "New request", new_request_path, class: "btn btn-primary" %>
+<%= link_to "New request", new_request_path, class: "btn btn-sm btn-primary" %>
