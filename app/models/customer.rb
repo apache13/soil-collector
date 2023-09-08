@@ -1,16 +1,19 @@
 class Customer < ApplicationRecord
     
-    validates :name, presence: true
-    validates :phone, presence: true
+  validates :name, presence: true
+  validates :phone, presence: true
 
-    has_many :requests
-    accepts_nested_attributes_for :requests, reject_if: :all_blank, allow_destroy: true
+  has_many :requests
+  accepts_nested_attributes_for :requests, reject_if: :all_blank, allow_destroy: true
 
-    after_create :generate_customer_code
+  after_create :generate_customer_code
 
   private
     def generate_customer_code
       update_attribute(:code, "C-#{format("%04d", self.id)}")
+    end
+    def self.ransackable_attributes(auth_object = nil)
+      ["code", "name", "phone"]
     end
 
   public  

@@ -3,8 +3,8 @@ class CustomersController < ApplicationController
 
   # GET /customers or /customers.json
   def index
-    #@customers = Customer.all
-    @customers = Customer.order(:id).page params[:page]
+    @q = Customer.ransack(params[:q])
+    @customers = @q.result().order(:id).page(params[:page])
   end
 
   # GET /customers/1 or /customers/1.json

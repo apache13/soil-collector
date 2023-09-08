@@ -1,12 +1,15 @@
 <h1>Customers</h1>
 
+<%= render "search_customer" %>
+<br/>
+
 <table class="table table-hover" id="customers">
   <thead class="table-primary">
     <tr>
     <th scope="col">#</th>
-    <th scope="col">Code</th>
-    <th scope="col">Name</th>
-    <th scope="col">Phone</th>
+    <th><%= sort_link(@q, :code) %></th>
+    <th><%= sort_link(@q, :name) %></th>
+    <th><%= sort_link(@q, :phone) %></th>
     <th scope="col">Email</th>
     <th scope="col">Address</th>
     <th scope="col">Remark</th>
@@ -22,4 +25,4 @@
 
 <%= paginate @customers %>
 
-<%= link_to "New customer", new_customer_path, class: "btn btn-primary" %>
+<%= link_to "New customer", new_customer_path, class: "btn btn-sm btn-primary" %>
