@@ -25,6 +25,8 @@ ADD . /app/soil
 
 RUN rails RAILS_ENV=production assets:precompile
 
+RUN rm -Rf node_modules
+
 FROM ruby:3.2.2-slim-bullseye as production
 
 RUN apt-get update -qq && apt-get install -y build-essential apt-utils libpq-dev
