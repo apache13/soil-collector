@@ -1,101 +1,4 @@
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sarabun&display=swap" rel="stylesheet">
-
-<style>
-@page { margin: 0 }
-body, article{ 
-  margin: 0;
-  font-family: 'Sarabun', sans-serif;
-  font-size: 16px;
-}
-small, sub, p {
-  font-size: 12px;
-}
-table, th, td {
-  width: 100%;
-  table-layout: fixed;
-  border: 1px solid black;
-  border-collapse: collapse;
-  text-align: center;
-  font-family: 'Sarabun', sans-serif;
-  font-size: 12px;
-}
-.sheet {
-  margin: 0;
-  overflow: hidden;
-  position: relative;
-  box-sizing: border-box;
-  page-break-after: always;
-}
-
-/** Paper sizes **/
-body.A3           .sheet { width: 297mm; height: 419mm }
-body.A3.landscape .sheet { width: 420mm; height: 296mm }
-body.A4           .sheet { width: 210mm; height: 296mm }
-body.A4.landscape .sheet { width: 297mm; height: 209mm }
-body.A5           .sheet { width: 148mm; height: 209mm }
-body.A5.landscape .sheet { width: 210mm; height: 147mm }
-
-/** Padding area **/
-.sheet.padding-10mm { padding: 10mm }
-.sheet.padding-15mm { padding: 15mm }
-.sheet.padding-20mm { padding: 20mm }
-.sheet.padding-25mm { padding: 25mm }
-
-/** For screen preview **/
-@media screen {
-  body { background: #e0e0e0 }
-  .sheet {
-    background: white;
-    box-shadow: 0 .5mm 2mm rgba(0,0,0,.3);
-    margin: 5mm;
-  }
-}
-
-/** Fix for Chrome issue #273306 **/
-@media print {
-           body.A3.landscape { width: 420mm }
-  body.A3, body.A4.landscape { width: 297mm }
-  body.A4, body.A5.landscape { width: 210mm }
-  body.A5                    { width: 148mm }
-}
-
-.column {
-  float: left;
-  width: 50%;
-}
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.column-header {
-  float: left;
-}
-
-.left-header {
-  width: 70%;
-}
-
-.right-header {
-  width: 30%;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.footer {
-  display: table-footer-group;
-}
-</style>
-<style>@page { size: A4 }</style>
-
+<%= stylesheet_link_tag "report", "data-turbo-track": "reload" %>
 <body class="A4">
   <section class="sheet padding-10mm">
     <%= render "report_header" %>
@@ -113,6 +16,6 @@ body.A5.landscape .sheet { width: 210mm; height: 147mm }
     <%= render "report_header" %>
     <%= render "report_suggestion" %>
   </section>
-</body>
+
 
 
