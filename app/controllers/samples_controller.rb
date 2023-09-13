@@ -1,23 +1,35 @@
 class SamplesController < ApplicationController
   before_action :set_sample, only: %i[ show edit update destroy ]
 
+  add_breadcrumb "Home", :root_path  
+
   # GET /samples or /samples.json
   def index
+    add_breadcrumb "Sample", :samples_path
     @q = Sample.ransack(params[:q])
     @samples = @q.result().order(:id).page(params[:page])
   end
 
   # GET /samples/1 or /samples/1.json
-  def show
+  def show    
+    add_breadcrumb "Customer", :customers_path
+    add_breadcrumb "#{@sample.request.customer.display}", @sample.request.customer
+    add_breadcrumb "#{@sample.request.code}", @sample.request
+    add_breadcrumb "#{@sample.code}"
   end
 
   # GET /samples/new
   def new
+    add_breadcrumb "New"
     @sample = Sample.new
   end
 
   # GET /samples/1/edit
   def edit
+    add_breadcrumb "Customer", :customers_path
+    add_breadcrumb "#{@sample.request.customer.display}", @sample.request.customer
+    add_breadcrumb "#{@sample.request.code}", @sample.request
+    add_breadcrumb "#{@sample.code}"
   end
 
   # POST /samples or /samples.json

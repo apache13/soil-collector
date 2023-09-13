@@ -1,24 +1,30 @@
 class CustomersController < ApplicationController
   before_action :set_customer, only: %i[ show edit update destroy ]
 
+  add_breadcrumb "Home", :root_path
+  add_breadcrumb "Customer", :customers_path
+
   # GET /customers or /customers.json
-  def index
+  def index    
     @q = Customer.ransack(params[:q])
-    @customers = @q.result().order(:id).page(params[:page])
+    @customers = @q.result().order(:id).page(params[:page])    
   end
 
   # GET /customers/1 or /customers/1.json
   def show
+    add_breadcrumb "#{@customer.display}"
     @channels= ['phone', 'email']
   end
 
   # GET /customers/new
   def new
+    add_breadcrumb "New"
     @customer = Customer.new
   end
 
   # GET /customers/1/edit
   def edit    
+    add_breadcrumb "#{@customer.display}"
   end
 
   # POST /customers or /customers.json

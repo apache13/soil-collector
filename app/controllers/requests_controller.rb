@@ -1,20 +1,30 @@
 class RequestsController < ApplicationController
+ 
   before_action :set_request, only: %i[ show edit update destroy report]
   layout false, only: [:report]
+
+  add_breadcrumb "Home", :root_path
+  
+
   # GET /requests or /requests.json
   def index
+    add_breadcrumb "Request", :requests_path
     @q = Request.ransack(params[:q])
     @requests = @q.result().order(:id).page(params[:page])
   end
 
   # GET /requests/1 or /requests/1.json
   def show
+    add_breadcrumb "Customer", :customers_path
+    add_breadcrumb "#{@request.customer.display}", @request.customer
+    add_breadcrumb "#{@request.code}"
   end
 
   # GET /requests/new
   def new
-    @request = Request.new
+    add_breadcrumb "New"
     @channels= ['phone', 'email']
+    @request = Request.new    
   end
 
   # GET /requests/1/report
@@ -24,6 +34,9 @@ class RequestsController < ApplicationController
 
   # GET /requests/1/edit
   def edit
+    add_breadcrumb "Customer", :customers_path
+    add_breadcrumb "#{@request.customer.display}", @request.customer
+    add_breadcrumb "#{@request.code}"
     @channels= ['phone', 'email']
   end
 

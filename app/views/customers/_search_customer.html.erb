@@ -1,23 +1,27 @@
-<%= search_form_for @q, class: "row" do |f| %>
-  <div class="col-sm-2">
-    <div class="input-group input-group-sm">
-      <div class="input-group-text">Code</div>          
-      <%= f.search_field :code_cont, class: "form-control" %>
+<div class="card">
+  <div class="card-body">
+  <%= search_form_for @q, class: "row" do |f| %>
+    <div class="col-sm-2">
+      <div class="input-group input-group-sm">
+        <div class="input-group-text">Code</div>          
+        <%= f.search_field :code_cont, class: "form-control" %>
+      </div>
+    </div> 
+    <div class="col-sm-3">
+      <div class="input-group input-group-sm">
+        <div class="input-group-text">Name</div>          
+        <%= f.search_field :name_cont ,class: "form-control"%>
+      </div>
+    </div>  
+    <div class="col-sm-3">
+      <div class="input-group input-group-sm">
+        <div class="input-group-text">Phone</div>          
+        <%= f.search_field :phone_cont ,class: "form-control"%>
+      </div>
     </div>
-  </div> 
-  <div class="col-sm-3">
-    <div class="input-group input-group-sm">
-      <div class="input-group-text">Name</div>          
-      <%= f.search_field :name_cont ,class: "form-control"%>
-    </div>
-  </div>  
-  <div class="col-sm-3">
-    <div class="input-group input-group-sm">
-      <div class="input-group-text">Phone</div>          
-      <%= f.search_field :phone_cont ,class: "form-control"%>
-    </div>
+    <div class="col-sm-2">
+        <%= f.submit class: 'btn btn-sm btn-primary' %>
+    </div>   
+  <% end %>
   </div>
-  <div class="col-sm-2">
-      <%= f.submit class: 'btn btn-sm btn-primary' %>
-  </div>   
-<% end %>
+</div>

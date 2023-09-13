@@ -77,5 +77,5 @@ end
 
 gem 'bootstrap_form', '~> 5.2', '>= 5.2.3'
 gem 'kaminari', '~> 1.2', '>= 1.2.2'
-
 gem 'ransack', '~> 4.0'
+gem 'breadcrumbs_on_rails', '~> 4.1'
